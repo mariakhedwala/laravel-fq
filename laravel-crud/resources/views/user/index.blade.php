@@ -3,6 +3,13 @@
 @section('content')
 <section class="contacts">
 	<div class="wrapper">
+        @foreach (['success', 'danger'] as $key)
+        @if(Session::has($key))
+        <div class="session-msg alert alert-{{ $key }}">
+            <p>{{ Session::get($key) }}</p>
+        </div>
+        @endif
+        @endforeach
         <h2>{{ __('Contacts') }}</h2>
         <div class="create-new">
             <a class="btn btn-primary" href="{{ url('/users/create') }}">{{ __('new contact') }}</a>

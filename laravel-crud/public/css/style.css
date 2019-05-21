@@ -1,0 +1,72 @@
+.wrapper {
+    width: 80%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.contacts {
+    width: 100%;
+    padding: 30px;
+}
+
+h2 {
+    margin-bottom: 20px !important;
+    font-size: 46px !important;
+    text-transform: capitalize;
+}
+
+.create-new a {
+    margin: 0 10px 20px;
+    text-transform: capitalize;
+}
+
+.contacts table {
+    width: 100%;
+}
+
+.contacts table tr th,
+.contacts table td:not(.email) {
+    text-transform: capitalize;
+}
+
+.contacts table tr .action {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.contacts table tr form {
+    margin: 0 0 0 30px;
+}
+
+.contacts tr button,
+.contacts tr a,
+label,
+button {
+    text-transform: capitalize !important;
+}
+
+.table th,
+.table td {
+    vertical-align: middle !important;
+}
+
+.create {
+    max-width: 800px;
+    width: 100%;
+    padding: 30px;
+    margin: 0 auto;
+}
+
+.session-msg p {
+    margin: 0;
+}
+
+.submit,
+.go-back {
+    display: inline-block;
+}
+
+.go-back {
+    float: right;
+}

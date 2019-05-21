@@ -36,7 +36,7 @@
             <div class="form-group">
                 <label for="job">{{ __('Job Title') }}</label>
                 <div class="form-group__job">
-                    <select name="job" id="job" class="form-control{{ $errors->has('job_title') ? ' is-invalid' : '' }}"
+                    <select name="job_title" id="job" class="form-control{{ $errors->has('job_title') ? ' is-invalid' : '' }}"
                         autofocus="true">
                         <option selected value="{{ $job_title = $user->id ? $user->job_title : old('job_title') }}">
                             {{ $job_title = $user->job_title ? $user->job_title : 'Select job_title' }}</option>
@@ -111,10 +111,13 @@
                 </div>
             </div>
 
-            <div class="form-group">
+            <div class="submit">
                 <button id="create-user" type="submit" class="btn btn-primary">
                     {{ $valuebtn = $user->id ? 'Update' : 'Submit' }}
                 </button>
+            </div>
+            <div class="go-back">
+                <a href="{{ url()->previous() }}" class="btn btn-primary">Go Back</a>
             </div>
         </form>
     </div>

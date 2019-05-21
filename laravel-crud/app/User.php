@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Hash;
 
 class User extends Authenticatable
 {
@@ -16,7 +17,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'job', 'city', 'country', 'password',
+        'name', 'email', 'job_title', 'city', 'country', 'password',
     ];
 
     /**
@@ -56,6 +57,7 @@ class User extends Authenticatable
      */
     public function createUsers($validated)
     {
+        $validated['password'] = Hash::make($validated['password']);
         $createdUser = User::create($validated);
         return $createdUser;
     }
@@ -68,6 +70,7 @@ class User extends Authenticatable
      */
     public function editUser($validated)
     {
+        $validated['password'] = Hash::make($validated['password']);
         $updateUser = User::update($validated);
         return $updateUser;
     }

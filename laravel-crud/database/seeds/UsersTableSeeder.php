@@ -14,11 +14,11 @@ class UsersTableSeeder extends Seeder
     public function run()
     {
         DB::table('users')->insert([
-            'name' => Str::random(10),
-            'job_title' => Str::random(10),
-            'country' => Str::random(10),
-            'city' => Str::random(10),
-            'email' => Str::random(10).'@gmail.com',
+            'name' => 'Ajinkya',
+            'job_title' => 'Web Developer',
+            'country' => 'India',
+            'city' => 'Mumbai',
+            'email' => 'ajinkyapatil.p@gmail.com',
             'password' => bcrypt('secret'),
         ]);
     }

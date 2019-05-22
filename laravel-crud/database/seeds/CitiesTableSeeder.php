@@ -11,8 +11,13 @@ class CitiesTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('cities')->insert([
-            'city' => Str::random(10),
-        ]);
+        DB::table('cities')->insert(array(
+     array(
+       'city' => 'Pune',
+     ),
+     array(
+       'city' => 'Delhi',
+     ),
+   ));
     }
 }

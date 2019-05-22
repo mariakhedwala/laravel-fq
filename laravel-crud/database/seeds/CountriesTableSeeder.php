@@ -11,8 +11,13 @@ class CountriesTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('countries')->insert([
-            'country' => Str::random(10),
-        ]);
+    	DB::table('countries')->insert(array(
+    		array(
+    			'country' => 'Argentina',
+    		),
+    		array(
+    			'country' => 'Spain',
+    		),
+    	));
     }
 }

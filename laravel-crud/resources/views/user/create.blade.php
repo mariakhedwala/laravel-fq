@@ -117,7 +117,7 @@
                 </button>
             </div>
             <div class="go-back">
-                <a href="{{ url()->previous() }}" class="btn btn-primary">Go Back</a>
+                <a href="{{ url('/users') }}" class="btn btn-primary">Go Back</a>
             </div>
         </form>
     </div>

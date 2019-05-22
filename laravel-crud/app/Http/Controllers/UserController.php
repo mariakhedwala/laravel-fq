@@ -45,7 +45,7 @@ class UserController extends Controller
         try {
             $validated = $request->validate([
                 'name' => ['required','max:255'],
-                'email' => ['required','email'],
+                'email' => ['required','email','unique:users,email'],
                 'job_title' => ['nullable', 'string'],
                 'city' => ['nullable', 'string'],
                 'country' => ['nullable', 'string'],
@@ -66,13 +66,6 @@ class UserController extends Controller
                 }
             } else {
                 return redirect()->route('users.create')->with('error');
-            }
-        } catch (\Illuminate\Database\QueryException $e) {
-            $errorCode = $e->errorInfo[1];
-            if ($errorCode == '1062') {
-                return redirect()->back()->withErrors(['email' => 'Email ID already exist']);
-            } else {
-                return redirect()->back()->with('error');
             }
         } catch(Exception $e) {
             return redirect()->back()->with('error');
@@ -147,13 +140,6 @@ class UserController extends Controller
             }
             return redirect('users');
 
-        } catch (\Illuminate\Database\QueryException $e) {
-            $errorCode = $e->errorInfo[1];
-            if ($errorCode == '1062') {
-                return redirect()->back()->withErrors(['email' => 'Email ID already exist']);
-            } else {
-                return redirect()->back()->with('error');
-            }   
         } catch (Exception $e) {
             return redirect()->back()->with('error');
         }
